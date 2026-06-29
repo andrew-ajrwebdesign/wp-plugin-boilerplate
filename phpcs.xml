@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="AJR My Plugin">
+    <description>WordPress Coding Standards for AJR My Plugin</description>
+
+    <!-- What to scan -->
+    <file>.</file>
+    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>/node_modules/*</exclude-pattern>
+
+    <!-- How to report -->
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+
+    <!-- WordPress ruleset -->
+    <rule ref="WordPress">
+        <!-- PSR-4 filenames don't follow WP filename conventions — that's intentional. -->
+        <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+        <!-- Short array syntax [] is standard modern PHP and used throughout WP Core. -->
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+        <!-- Commented-out code examples in boilerplate files don't need sentence punctuation. -->
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+    </rule>
+
+    <!-- Enforce correct text domain -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="ajr-my-plugin"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Minimum PHP version -->
+    <config name="minimum_supported_wp_version" value="6.0"/>
+    <config name="testVersion" value="8.0-"/>
+</ruleset>
