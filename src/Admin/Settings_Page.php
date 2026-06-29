@@ -3,6 +3,7 @@
  * Plugin settings page (Settings → AJR My Plugin).
  *
  * @package AJR_My_Plugin
+ * @since   1.0.0
  */
 
 namespace AJR\MyPlugin\Admin;
@@ -11,6 +12,8 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Registers and renders the plugin settings page.
+ *
+ * @since 1.0.0
  */
 class Settings_Page {
 
@@ -25,6 +28,7 @@ class Settings_Page {
 	/**
 	 * Registers all WordPress hooks for this class.
 	 *
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function init(): void {
@@ -36,6 +40,7 @@ class Settings_Page {
 	/**
 	 * Adds the settings page to the Settings menu.
 	 *
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function register_page(): void {
@@ -51,6 +56,7 @@ class Settings_Page {
 	/**
 	 * Registers settings, sections, and fields with the WordPress Settings API.
 	 *
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function register_settings(): void {
@@ -79,7 +85,8 @@ class Settings_Page {
 	/**
 	 * Enqueues admin assets only on this plugin's settings page.
 	 *
-	 * @param string $hook The current admin page hook suffix.
+	 * @since  1.0.0
+	 * @param  string $hook The current admin page hook suffix.
 	 * @return void
 	 */
 	public function enqueue_assets( string $hook ): void {
@@ -110,6 +117,7 @@ class Settings_Page {
 	/**
 	 * Renders the example text field.
 	 *
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function render_example_field(): void {
@@ -130,6 +138,7 @@ class Settings_Page {
 	/**
 	 * Renders the settings page HTML.
 	 *
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function render(): void {
@@ -158,7 +167,8 @@ class Settings_Page {
 	/**
 	 * Sanitizes submitted settings values before saving to the database.
 	 *
-	 * @param array $input Raw input from the settings form.
+	 * @since  1.0.0
+	 * @param  array $input Raw input from the settings form.
 	 * @return array
 	 */
 	public function sanitize( array $input ): array {
@@ -176,8 +186,9 @@ class Settings_Page {
 	/**
 	 * Returns a single setting value with a fallback.
 	 *
-	 * @param string $key      Option key.
-	 * @param mixed  $fallback Value to return if key is not set.
+	 * @since  1.0.0
+	 * @param  string $key      Option key.
+	 * @param  mixed  $fallback Value to return if key is not set.
 	 * @return mixed
 	 */
 	public static function get_option( string $key, $fallback = null ) {

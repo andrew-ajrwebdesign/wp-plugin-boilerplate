@@ -6,6 +6,7 @@
  * wired here and passed as constructor arguments — no globals, no singletons.
  *
  * @package AJR_My_Plugin
+ * @since   1.0.0
  */
 
 namespace AJR\MyPlugin\Core;
@@ -16,18 +17,23 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Wires all plugin classes together and calls their init methods.
+ *
+ * @since 1.0.0
  */
 class Plugin {
 
 	/**
 	 * Settings page instance.
 	 *
+	 * @since 1.0.0
 	 * @var Settings_Page
 	 */
 	private Settings_Page $settings_page;
 
 	/**
 	 * Constructor — instantiate all dependencies.
+	 *
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		$this->settings_page = new Settings_Page();
@@ -36,6 +42,7 @@ class Plugin {
 	/**
 	 * Register all hooks by calling init() on each dependency.
 	 *
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function init(): void {

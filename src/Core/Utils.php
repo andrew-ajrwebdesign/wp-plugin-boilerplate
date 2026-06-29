@@ -3,6 +3,7 @@
  * Static utility helpers shared across the plugin.
  *
  * @package AJR_My_Plugin
+ * @since   1.0.0
  */
 
 namespace AJR\MyPlugin\Core;
@@ -11,13 +12,16 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Stateless helper methods used throughout the plugin.
+ *
+ * @since 1.0.0
  */
 class Utils {
 
 	/**
 	 * Masks all but the last 4 characters of a sensitive string.
 	 *
-	 * @param string $value The string to mask.
+	 * @since  1.0.0
+	 * @param  string $value The string to mask.
 	 * @return string
 	 */
 	public static function mask_sensitive_text( string $value ): string {
@@ -33,7 +37,8 @@ class Utils {
 	/**
 	 * Strips HTML tags, collapses whitespace, and trims a string.
 	 *
-	 * @param string $text Raw text or HTML.
+	 * @since  1.0.0
+	 * @param  string $text Raw text or HTML.
 	 * @return string
 	 */
 	public static function clean_plain_text( string $text ): string {

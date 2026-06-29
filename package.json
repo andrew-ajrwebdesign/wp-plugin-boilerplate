@@ -1,0 +1,15 @@
+{
+    "name": "ajr-my-plugin",
+    "version": "1.0.0",
+    "description": "Plugin description",
+    "private": true,
+    "scripts": {
+        "build": "wp-scripts build src/assets/js/admin.js --output-path=assets/js",
+        "start": "wp-scripts start src/assets/js/admin.js --output-path=assets/js",
+        "lint:js": "wp-scripts lint-js",
+        "lint:css": "wp-scripts lint-style"
+    },
+    "devDependencies": {
+        "@wordpress/scripts": "^30.0"
+    }
+}

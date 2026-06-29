@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"AJR\\MyPlugin\\Tests\\Unit\\Admin\\Settings_PageTest::test_init_registers_expected_hooks":0.004,"AJR\\MyPlugin\\Tests\\Unit\\Admin\\Settings_PageTest::test_get_option_returns_fallback_when_key_missing":0.001,"AJR\\MyPlugin\\Tests\\Unit\\Admin\\Settings_PageTest::test_sanitize_cleans_example_field":0}}

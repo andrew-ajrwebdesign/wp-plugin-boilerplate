@@ -12,6 +12,7 @@
  * Domain Path:  /languages
  *
  * @package AJR_My_Plugin
+ * @since   1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,7 +37,15 @@ add_action(
 register_activation_hook(
 	__FILE__,
 	function () {
-		// Set default options, create tables, flush rewrite rules.
+		// Set defaults only on first activation (never overwrite existing settings).
+		if ( false === get_option( 'ajr_my_plugin_settings' ) ) {
+			add_option(
+				'ajr_my_plugin_settings',
+				[
+					'example_field' => '',
+				]
+			);
+		}
 		flush_rewrite_rules();
 	}
 );
